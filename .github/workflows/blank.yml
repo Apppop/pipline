@@ -31,3 +31,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+                - name: Install dependencies
+                
+      - name: Build application
+        run: npm run build
+      
+      - name: Run tests
+        run: npm run test
+      
+      - name: Deploy to production
+        run: |
+          # Add commands to deploy the application to production
+          # For example:
+          # npm install -g firebase-tools
+          # firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
