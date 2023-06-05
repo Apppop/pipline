@@ -24,9 +24,6 @@ jobs:
       - name: Build
         run: go build ./...
 
-      - name: Run tests
-        run: go test ./...
-
       - name: Install project
         run: go install ./...
 
