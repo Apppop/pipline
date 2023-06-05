@@ -28,5 +28,5 @@ jobs:
         run: go install ./...
         
       - name: Run application
-        run: $GOPATH/bin/your-application-name
+        run: $GOPATH/bin/Go CI Pipeline
 
