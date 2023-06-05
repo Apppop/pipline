@@ -26,4 +26,7 @@ jobs:
 
       - name: Install project
         run: go install ./...
+        
+      - name: Run application
+        run: $GOPATH/bin/your-application-name
 
