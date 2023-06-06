@@ -24,9 +24,6 @@ jobs:
       - name: Install project
         run: go install ./...
         
-      - name: Install dependencies
-        run: go mod download
-        
       - name: Build and Test
         run: |
           go build ./...
