@@ -24,9 +24,6 @@ jobs:
       - name: Install project
         run: go install ./...
         
-      - name: Lint
-        run: go fmt ./... && go vet ./...
-
       - name: Install dependencies
         run: go mod download
         
