@@ -5,16 +5,16 @@ FROM golang:1.17-alpine
 WORKDIR /app
 
 # คัดลอกไฟล์ Go mod และ sum
-# COPY ./go.mod ./
+COPY ./go.mod ./
 
 # # ดาวน์โหลดและติดตั้ง Go dependencies
-# RUN go mod download
+RUN go mod download
 
 # # คัดลอกส่วนที่เหลือของโค้ดแอปพลิเคชัน
-# COPY . .
+COPY . .
 
 # # สร้างแอปพลิเคชัน Go
-# RUN go build -o app
+RUN go build -o app
 
 # # ตั้งค่าคำสั่งเริ่มต้นให้รันไฟล์ executable
-# CMD ["./app"]
+CMD ["./app"]
