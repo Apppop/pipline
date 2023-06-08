@@ -13,12 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repo's default branch
-        uses: actions/checkout@v3
-
+      
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-
+      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       
@@ -27,21 +25,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
           push: true
-          tags: nitikornchumnankul/go-mongo:v1.0.0
-      - name: multiple command
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          script: |
-            ls -al
-            ls -al /${{ secrets.USERNAME }}/github-action-sample/
-            docker compose -f /${{ secrets.USERNAME }}/github-action-sample/docker-compose.yaml down
-            docker compose -f /${{ secrets.USERNAME }}/github-action-sample/docker-compose.yaml up -d
+          tags: swaggerzaza/golang:v1
+
