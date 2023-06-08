@@ -41,8 +41,8 @@ jobs:
          script: |
                whoami
                ls -al
-               ls -al /${{ secrets.DOCKERHUB_USERNAME }}/battery-traking/
-               docker compose -f /${{ secrets.DOCKERHUB_USERNAME }}/battery-traking/docker-compose.yaml down
-               docker compose -f /${{ secrets.DOCKERHUB_USERNAME }}/battery-traking/docker-compose.yaml up -d
+               ls -al /root/battery-traking/
+               docker compose -f /root/battery-traking/docker-compose.yaml down
+               docker compose -f /root/battery-traking/docker-compose.yaml up -d
 
 
