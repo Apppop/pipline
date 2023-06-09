@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: swaggerzaza/golang:v2-${{ github.run_number }}
+          tags: swaggerzaza/battery:v1-${{ github.run_number }}
       
       - name: multiple command
         uses: appleboy/ssh-action@v0.1.10
@@ -39,7 +39,7 @@ jobs:
          username: ${{ secrets.USERNAME }}
          key: ${{ secrets.KEY }}
          script: |
-               export tag=v2-${{ github.run_number }}
+               export tag=v1-${{ github.run_number }}
                whoami
                ls -al
                ls -al /root/battery-traking/
